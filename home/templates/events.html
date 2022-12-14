@@ -1,0 +1,41 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+<div class="eventpage">
+    <div class="eventsection">
+        <h2>Upcoming Events</h2>
+            <div class="eventsub">
+                {% for event in uevents %}
+                    <div class="eventcard">
+                        <div class="eventimg">
+                            <img src="{% static event.image %}" alt="placeholder">
+                        </div>    <div class="eventc"><p class="eventname">
+                            {{ event.name }}
+                        </p>
+                            <p class="eventd">
+                                {{ event.description }}
+                            </p></div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    <div class="eventsection">
+        <h2>Past Events</h2>
+        <div class="eventsub">
+            {% for event in pevents %}
+                <div class="eventcard">
+                    <div class="eventimg">
+                        <img src="{% static event.image %}" alt="placeholder">
+                    </div>    <div class="eventc"><p class="eventname">
+                        {{ event.name }}
+                    </p>
+                        <p class="eventd">
+                            {{ event.description }}
+                        </p></div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

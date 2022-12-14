@@ -1,0 +1,70 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+    {% load static %}
+
+    <div class="homeimage">
+        <img src="{% static 'image/highway.png' %}" alt="bg image">
+    </div>
+
+    <div class="aboutsection">
+        <h2>About</h2>
+        <p>The <b>Society of Automotive Engineers</b> is an international organization focusing on engineers from the
+            Automotive and Aerospace domain. The SAE Collegiate Club of Sri Chitra Thirunal College of Engineering was
+            the first in Kerala established by Dr. U Prakash in 1996. Since then the club has remained active for the
+            past 20+ years with more than 200 members every year.The club has conducted competition, organised workshops
+            and talk sessions by various industry experts. Over the years members of the club have participated in
+            national events such as the SAE Baja and Formula Student. The club also provides students with support in
+            studies in the form of journal papers and magazines which enable them to become the best.</p>
+    </div>
+    <div class="member">
+        <div class="memberimage">
+            <img src="{% static 'image/memberbg.png' %}">
+        </div>
+        <div class="membersub">
+            <div class="membercard">
+                <p class="no">1996</p>
+                <p>Established Year</p>
+            </div>
+            <div class="membercard">
+                <p class="no">61</p>
+                <p>Student Members</p>
+            </div>
+            <div class="membercard">
+                <p class="no">8</p>
+                <p>Faculty Members</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="eventsection">
+        <h2>Recent Events</h2>
+        <div class="eventsub">
+            {% for event in events %}
+                <div class="eventcard">
+                    <div class="eventimg">
+                        <img src="{% static event.image %}" alt="placeholder">
+                    </div>    
+                    <div class="eventc">
+                        <p class="eventname">
+                            {{ event.name }}
+                        </p>
+                        <p class="eventd">
+                            {{ event.description }}
+                        </p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="fulleventbutton">
+            <a href="/events">
+                <p>View Full Events</p>
+                <div class="eventbuttonb">
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+{% endblock %}

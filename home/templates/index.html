@@ -1,0 +1,104 @@
+
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static 'style/main.css' %}">
+        <title>SAE SCTCE</title>
+    </head>
+
+    <body>
+        <div class='top'>
+            <div class="topnav">
+                <a href="/"><img src="{% static 'image/sae.png' %}" alt="SAE logo"></a>
+                <ul class="navlist">
+                    <li class="navitem"><a href="/" {% if active == 'home'  %}class="active"{% endif %} >Home</a></li>
+                    <li class="navitem"><a href="/about" {% if active == 'about'  %}class="active"{% endif %}>About</a></li>
+                    <li class="navitem"><a href="/events" {% if active == 'events'  %}class="active"{% endif %}>Events</a></li>
+                    <li class="navitem"><a href="/archive" {% if active == 'archive'  %}class="active"{% endif %}>Archive</a></li>
+                </ul>
+                <a href="javascript:menuButton();" class="icon">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+            <ul id="responsive" class="off">
+                <li class="navitem"><a href="/" {% if active == 'home'  %}class="active"{% endif %}>Home</a></li>
+                <li class="navitem"><a href="/about" {% if active == 'about'  %}class="active"{% endif %}>About</a></li>
+                <li class="navitem"><a href="/events" {% if active == 'events'  %}class="active"{% endif %}>Events</a></li>
+                <li class="navitem"><a href="/archive" {% if active == 'archive'  %}class="active"{% endif %}>Archive</a></li>
+            </ul>
+        </div>
+        {% block content %}
+        {% endblock %}
+
+        <div class="contact">
+            <div class="contactHeader">
+                <p class="git">Get in Touch !!</p>
+                <button class="upbutton" id="scrollToTop" onclick="goToTop()">
+                    <img src="{% static 'image/up-arrow.svg' %}" alt="" class="uparrow">
+                </button>
+            </div>
+            <div class="subSection">
+                <div class="leftSection">
+                    <div class="formSection">
+                        <p class="pname">
+                            Your name
+                        </p>
+                        <div class="formname">
+                        </div>
+                        <p>
+                            Your email id
+                        </p>
+                        <div class="formname">
+                        </div>
+                        <p>
+                            Your message
+                        </p>
+                        <div class="formmessage">
+                        </div>
+                    </div>
+                    <div class="sendbutton">
+                        <a href="/events">
+                            <p>Send <img src="{% static 'image/send.svg' %}"></p>
+                            <div class="eventbuttonb">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="rightSection">
+                    <div class="mapcontainer">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d31570.179162978788!2d76.97678504229738!3d8.472871564370864!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05baee56e6b99b%3A0x4ce024c88eb0ddcb!2sSree%20Chitra%20Thirunal%20College%20of%20Engineering%2C%20Thiruvananthapuram!5e0!3m2!1sen!2sin!4v1650136957942!5m2!1sen!2sin"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="conatctSection">
+                        <div class="contactDetails">
+                            <img src="{% static 'image/Location-icon.svg' %}" alt="" class="contactIcon">
+                            <p class="contactText">NH 66, Pappanamcode, Thiruvananthapuram, Kerala, 695018.</p>
+                        </div>
+                        <div class="contactDetails">
+                            <img src="{% static 'image/Mail-icon.svg' %}" alt="" class="contactIcon">
+                            <p class="contactText">saeclub@sctce.ac.in</p>
+                        </div>
+                        <div class="contactDetails">
+                            <img src="{% static 'image/Call-icon.svg' %}" alt="" class="contactIcon">
+                            <p class="contactText">+91 89213 61955</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="footerText">© Copyright SAE SCTCE. All Rights Reserved</p>
+        </div>
+
+        <script src="{% static 'js/js1.js' %}">
+        </script>
+
+    </body>
+
+</html>
